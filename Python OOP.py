@@ -1,7 +1,7 @@
 #class
 class Person:
     def __init__(self, person_name: str, date_of_birth: int, ht_inches: int = None):
-        self.__name = person_name
+        self.__name = person_name #encapsulation - private member(__)
         self.__date_of_birth = date_of_birth
         self.__height = ht_inches
         self.abc = None
@@ -37,4 +37,4 @@ for Person in Person_list:
     if Person.get_year_of_birth() >= 1990:
         print(Person.get_summary())
 
-#encapsulation - private member
+
