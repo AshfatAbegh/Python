@@ -21,7 +21,7 @@ class Person:
         return "0" in string
 
     def get_summary(self):
-        return f"Name: {self.__name}, DOB: {self.__date_of_birth}, Height: {self.__height}"
+        return f"Name: {self.__name}, DOB: {self.__date_of_birth}, Height: {self.__height if self.__height is not None else 'Invalid'}"
 
 
 # a_Person = Person("Ashfat","1998","6 feet")
@@ -37,4 +37,27 @@ for Person in Person_list:
     if Person.get_year_of_birth() >= 1990:
         print(Person.get_summary())
 
+class Student(Person):
+    def __init__(self, Person_name:str, year_of_birth: int, email_id: str, student_id: str):
+        super().__init__(Person_name, year_of_birth)
+        self.id = student_id
+        self.email = email_id
 
+    def get_summary(self):
+        return f"Name:{self.get_name()} Email: {str(self.email)} Birth:{self.get_year_of_birth()}"
+
+
+
+student = Student("A", 2000, "s@google.com", "266gbvf")
+print(student.get_summary())
+student.set_name("Don")
+print(student.get_summary())
+
+class PlainClass:
+    pass
+
+abc = PlainClass()
+abc.age = 20
+abc.name = "Movie"
+
+print(abc.age)
